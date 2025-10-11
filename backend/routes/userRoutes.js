@@ -64,13 +64,13 @@ router.post('/fetch', async (req, res) => {
       inserted: false
     });
 });
-return res.status(500).json({
-  success: false,
-  message: `Failed to insert a unique user after ${maxAttempts} attempts`,
-  currentCount,
-  targetCount,
-  inserted: false
-});
+// return res.status(500).json({
+//   success: false,
+//   message: `Failed to insert a unique user after ${maxAttempts} attempts`,
+//   currentCount,
+//   targetCount,
+//   inserted: false
+// });
 
 
 // GET List all users
