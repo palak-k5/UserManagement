@@ -1,10 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-toolbar-title>User Management System</v-toolbar-title>
-    </v-app-bar>
-
-    <v-main>
+    <v-app-bar app color="primary" dark class="d-flex justify-center">
+  <v-toolbar-title class="text-h6 text-center">
+    User Management System
+  </v-toolbar-title>
+</v-app-bar>
+<v-main>
       <v-container fluid>
         <UserTable />
       </v-container>
