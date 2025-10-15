@@ -17,8 +17,7 @@ router.post('/fetch', async (req, res) => {
         inserted: false
       });
     }
-
-    console.log(`Current count: ${currentCount}/${1000}. Fetching one user...`);
+    console.log(`Current count: ${currentCount}/${1000}`);
 
     const maxAttempts = 10;
     let inserted = false;
@@ -50,8 +49,6 @@ router.post('/fetch', async (req, res) => {
         success: true,
         message: 'User inserted successfully',
         currentCount: newCount,
-        targetCount,
-        remaining: targetCount - newCount,
         inserted: true,
         user: { uuid, name, email, city }
       });
@@ -60,18 +57,9 @@ router.post('/fetch', async (req, res) => {
       success: false,
       message: `Failed to insert a unique user after ${maxAttempts} attempts`,
       currentCount,
-      targetCount,
       inserted: false
     });
 });
-// return res.status(500).json({
-//   success: false,
-//   message: `Failed to insert a unique user after ${maxAttempts} attempts`,
-//   currentCount,
-//   targetCount,
-//   inserted: false
-// });
-
 
 // GET List all users
 router.get('/', async (req, res) => {
